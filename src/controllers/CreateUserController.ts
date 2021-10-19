@@ -3,7 +3,7 @@ import { CreateUserService } from '../services/CreateUserService';
 
 export class CreateUserController {
   async handle(req: Request, res: Response) {
-    const { first_name, last_name, email, admin } = req.body;
+    const { first_name, last_name, email, password, admin } = req.body;
 
     const createUserService = new CreateUserService();
 
@@ -11,6 +11,7 @@ export class CreateUserController {
       first_name,
       last_name,
       email,
+      password,
       admin
     });
 
