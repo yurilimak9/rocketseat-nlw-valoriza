@@ -6,8 +6,8 @@ interface IUserRequest {
   first_name: string;
   last_name: string;
   email: string;
-  admin?: boolean;
   password: string;
+  admin?: boolean;
 }
 
 export class CreateUserService {
@@ -15,8 +15,8 @@ export class CreateUserService {
     first_name,
     last_name,
     email,
-    admin,
-    password
+    password,
+    admin = false
   }: IUserRequest) {
     const userRepository = getCustomRepository(UserRepository);
 
@@ -38,8 +38,8 @@ export class CreateUserService {
       first_name,
       last_name,
       email,
-      admin,
-      password: passwordHash
+      password: passwordHash,
+      admin
     });
 
     await userRepository.save(user);
