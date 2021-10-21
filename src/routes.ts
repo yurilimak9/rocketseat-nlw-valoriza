@@ -3,31 +3,31 @@ import { AuthenticateUserController } from './controllers/AuthenticateUserContro
 import { ensureAuthenticated } from './middlewares/ensureAuthenticated';
 import { ensureAdmin } from './middlewares/ensureAdmin';
 
-import { CreateComplimentController } from './controllers/CreateComplimentController';
-import { CreateTagController } from './controllers/CreateTagController';
-import { CreateUserController } from './controllers/CreateUserController';
-
-import { ListUserReceiveComplimentsController } from './controllers/ListUserReceiveComplimentsController';
-import { ListUserSendComplimentsController } from './controllers/ListUserSendComplimentsController';
-import { ListTagsController } from './controllers/ListTagsController';
 import { ListUsersController } from './controllers/ListUsersController';
+import { CreateUserController } from './controllers/CreateUserController';
+import { ListUserSendComplimentsController } from './controllers/ListUserSendComplimentsController';
+import { ListUserReceiveComplimentsController } from './controllers/ListUserReceiveComplimentsController';
+
+import { CreateTagController } from './controllers/CreateTagController';
+import { ListTagsController } from './controllers/ListTagsController';
+
+import { CreateComplimentController } from './controllers/CreateComplimentController';
 
 const router = Router();
 
 const authenticateController = new AuthenticateUserController();
-const createUserController = new CreateUserController();
+
 const listUsersController = new ListUsersController();
-
-const createTagController = new CreateTagController();
-const createComplimentController = new CreateComplimentController();
-
+const createUserController = new CreateUserController();
 const listUserSendComplimentsController =
   new ListUserSendComplimentsController();
-
 const listUserReceiveComplimentsController =
   new ListUserReceiveComplimentsController();
 
+const createTagController = new CreateTagController();
 const listTagsController = new ListTagsController();
+
+const createComplimentController = new CreateComplimentController();
 
 /**
  * Authentication
