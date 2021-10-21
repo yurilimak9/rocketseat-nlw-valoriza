@@ -26,7 +26,7 @@ export class AuthenticateUserService {
       {
         email: user.email
       },
-      '96a4a12d6ed869533f9f6c2fc1e61dfe',
+      process.env.SECRET_KEY,
       {
         subject: user.id,
         expiresIn: '1d'
